@@ -16,13 +16,17 @@ class FrontendPageController extends Controller
 
     public function landing(){
 
+
         return view('landing.welcome');
 
     }
 
     public function homeLanding(){
 
-        return view('home.home');
+        $products = Product::with(['images'])
+        ->where('status', 1)->limit(3)->get();
+
+        return view('home.home',compact('products'));
     }
 
     public function home()
@@ -30,7 +34,6 @@ class FrontendPageController extends Controller
         $categories = Category::with(['subcategory', 'subsubcategory', 'products'])->orderBy('category_name_en', 'ASC')->get();
         $sliders = Slider::where('slider_name', '=', 'Main-Slider')->where('slider_status', '=', 1)->limit(3)->get();
         $new_products = Product::with(['images'])
-        ->where('new_arrival' ,'=', 1)
         ->where('status', 1)->limit(20)->get();
 
         $skip_category_0 = Category::skip(0)->first();

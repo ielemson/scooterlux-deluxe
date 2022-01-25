@@ -5,12 +5,9 @@
             <div class="header-top-inner">
                 <div class="cnt-account">
                     <ul class="list-unstyled">
-                        @if (session()->get('language') == 'bangla')
-                            <li><a href="{{ route('dashboard') }}"><i class="icon fa fa-user"></i>আমার অ্যাকাউন্ট</a>
-                            </li>
-                        @else
+                        
                             <li><a href="{{ route('dashboard') }}"><i class="icon fa fa-user"></i>My Account</a></li>
-                        @endif
+                        
                         <li><a href="{{ route('listWishlist') }}"><i class="icon fa fa-heart"></i>Wishlist</a></li>
                         <li><a href="{{ route('myCartView') }}"><i class="icon fa fa-shopping-cart"></i>My Cart</a></li>
                         @auth
@@ -31,7 +28,7 @@
                 <div class="cnt-block">
                     <ul class="list-unstyled list-inline">
                         <li class="dropdown dropdown-small"> <a href="#" class="dropdown-toggle" data-hover="dropdown"
-                                data-toggle="dropdown"><span class="value">USD </span><b class="caret"></b></a>
+                                data-toggle="dropdown"><span class="value">NGN </span><b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">USD</a></li>
                                 <li><a href="#">INR</a></li>
@@ -40,18 +37,14 @@
                         </li>
                         <li class="dropdown dropdown-small"> <a href="#" class="dropdown-toggle" data-hover="dropdown"
                                 data-toggle="dropdown"><span class="value">
-                                    @if (session()->get('language') == 'bangla')
-                                        ভাষা:বাংলা
-                                    @else
+                                 
                                         Lang: English
-                                    @endif
+                                  
                                 </span><b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                @if (session()->get('language') == 'bangla')
-                                    <li><a href="{{ route('english.language') }}">English</a></li>
-                                @else
+                               
                                     <li><a href="{{ route('bangla.language') }}">বাংলা</a></li>
-                                @endif
+                               
                             </ul>
                         </li>
                     </ul>
@@ -71,8 +64,8 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-3 logo-holder">
                     <!--  LOGO  -->
-                    <div class="logo"> <a href="{{ route('home') }}"> <img
-                                src="{{ asset('frontend') }}/assets/images/logo.png" alt="logo"> </a> </div>
+                    <div class="logo"> <a href="{{ route('home') }}">
+                         <img src="{{ asset('home') }}//images/logo-white.png" alt="logo" style="width:50%; "> </a> </div>
                     <!-- /.logo -->
                     <!--  LOGO : END  -->
                 </div>
@@ -81,7 +74,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-7 top-search-holder">
                     <!-- /.contact-row -->
                     <!--  SEARCH AREA  -->
-                    <div class="search-area">
+                    {{-- <div class="search-area">
                         <form>
                             <div class="control-group">
                                 <ul class="categories-filter animate-dropdown">
@@ -104,7 +97,7 @@
                                 <a class="search-button" href="#"></a>
                             </div>
                         </form>
-                    </div>
+                    </div> --}}
                     <!-- /.search-area -->
                     <!--  SEARCH AREA : END  -->
                 </div>
@@ -120,7 +113,7 @@
                                 <div class="basket-item-count"><span class="count" id="cartQty"></span></div>
                                 <div class="total-price-basket"> <span class="lbl">cart -</span>
                                     <span class="total-price">
-                                        <span class="sign">$</span>
+                                        <span class="sign">&#8358;</span>
                                         <span class="value" id="cartSubTotal"></span>
                                     </span>
                                 </div>
@@ -137,7 +130,7 @@
                                 {{-- mini cart start with AJAX END --}}
 
                                 <div class="clearfix cart-total">
-                                    <div class="pull-right"> <span class="text">Sub Total :</span class="sign">$<span
+                                    <div class="pull-right"> <span class="text">Sub Total :</span class="sign">&#8358;<span
                                             class='price' id="cartSubTotal"></span> </div>
                                     <div class="clearfix"></div>
 
@@ -179,75 +172,28 @@
                     <div class="navbar-collapse collapse" id="mc-horizontal-menu-collapse">
                         <div class="nav-outer">
                             <ul class="nav navbar-nav">
-                                <li class="active dropdown yamm-fw"> <a href="{{ route('home') }}"
-                                        data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">
-                                        @if (session()->get('language') == 'bangla')
-                                            হোম
-                                        @else
-                                            Home
-                                        @endif
+                                <li class="active dropdown yamm-fw"> 
+                                    <a href="{{ route('homeLanding') }}"> Home </a>
+                                </li>
+
+                                <li class=" dropdown yamm-fw"> 
+                                    <a href="{{ route('home') }}">
+                                        Products
                                     </a>
                                 </li>
-                                @php
-                                    $categories = \App\Models\Category::with(['subcategory', 'subsubcategory', 'products'])->orderBy('category_name_en', 'ASC')->get();
-                                @endphp
-                                @foreach ($categories as $category)
-                                    @if ($loop->index > 4)
-                                        @php
-                                            continue;
-                                        @endphp
-                                    @endif
-                                    <li class="dropdown yamm mega-menu"> <a href="" data-hover="dropdown"
-                                            class="dropdown-toggle" data-toggle="dropdown">
-                                            @if (session()->get('language') == 'bangla')
-                                                {{ $category->category_name_bn }}
-                                            @else
-                                                {{ $category->category_name_en }}
-                                            @endif
-                                        </a>
-                                        <ul class="dropdown-menu container">
-                                            <li>
-                                                <div class="yamm-content ">
-                                                    <div class="row d-flex justify-content-between align-items-center">
-                                                        @foreach ($category->subcategory as $subcategory)
-                                                            <div class="col-xs-12 col-sm-6 col-md-2 col-menu">
-                                                                <h2 class="title">
-                                                                    <a
-                                                                        href="{{ route('subcategory.products', ['id' => $subcategory->id, 'slug' => $subcategory->subcategory_slug_en]) }}">
-                                                                        @if (session()->get('language') == 'bangla')
-                                                                            {{ $subcategory->subcategory_name_bn }}
-                                                                        @else
-                                                                            {{ $subcategory->subcategory_name_en }}
-                                                                        @endif
-                                                                    </a>
-                                                                </h2>
-                                                                <ul class="links">
-                                                                    @foreach ($subcategory->subsubcategory as $subsubcategory)
-                                                                        <li><a
-                                                                                href="{{ route('subsubcategory.products', ['id' => $subsubcategory->id, 'slug' => $subsubcategory->subsubcategory_slug_en]) }}">
-                                                                                @if (session()->get('language') == 'bangla')
-                                                                                    {{ $subsubcategory->subsubcategory_name_bn }}
-                                                                                @else
-                                                                                    {{ $subsubcategory->subsubcategory_name_en }}
-                                                                                @endif
-                                                                            </a></li>
-                                                                    @endforeach
-                                                                </ul>
-                                                            </div>
-                                                            <!-- /.col -->
-                                                        @endforeach
-                                                        <div class="col-xs-12 col-sm-6 col-md-4 col-menu banner-image">
-                                                            <img class="img-responsive"
-                                                                src="{{ asset($category->category_image) }}"
-                                                                {{-- src="{{ asset('frontend') }}/assets/images/banners/top-menu-banner.jpg" --}} alt="">
-                                                        </div>
-                                                        <!-- /.yamm-content -->
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                @endforeach
+                                <li class=" dropdown yamm-fw"> <a href="{{ route('home') }}"
+                                        data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">
+                                            About
+                                       
+                                    </a>
+                                </li>
+                                <li class=" dropdown yamm-fw"> <a href="{{ route('home') }}"
+                                        data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">
+                                            Contact
+                                       
+                                    </a>
+                                </li>
+                               
                                 <li class="dropdown  navbar-right special-menu"> <a href="#">Todays offer</a> </li>
                             </ul>
                             <!-- /.navbar-nav -->

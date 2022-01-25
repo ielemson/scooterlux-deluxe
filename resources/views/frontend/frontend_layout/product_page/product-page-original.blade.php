@@ -4,26 +4,26 @@
     <div class="body-content outer-top-xs">
         <div class="container">
             <div class="row single-product">
-                {{-- <div class="col-md-3 sidebar">
+                <div class="col-md-3 sidebar">
                     <div class="sidebar-module-container">
                         <div class="home-banner outer-top-n">
                             <img src="{{ asset('frontend') }}/assets/images/banners/LHS-banner.jpg" alt="Image">
                         </div>
                         <!--  HOT DEALS  -->
-                        @include('frontend.frontend_layout.widgets.hot-deals-widget')
+                        {{-- @include('frontend.frontend_layout.widgets.hot-deals-widget') --}}
                         <!--  HOT DEALS: END  -->
 
                         <!--  NEWSLETTER  -->
-                        @include('frontend.frontend_layout.widgets.newsletter-widget')
+                        {{-- @include('frontend.frontend_layout.widgets.newsletter-widget') --}}
                         <!--  NEWSLETTER: END  -->
 
                         <!--  Testimonials -->
-                        @include('frontend.frontend_layout.widgets.testimonial-widget')
+                        {{-- @include('frontend.frontend_layout.widgets.testimonial-widget') --}}
                         <!--  Testimonials: END  -->
 
                     </div>
-                </div><!-- /.sidebar --> --}}
-                <div class="col-md-12">
+                </div><!-- /.sidebar -->
+                <div class="col-md-9">
                     <div class="detail-block">
                         <div class="row  wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
                             <div class="col-xs-12 col-sm-6 col-md-5 gallery-holder">
@@ -123,7 +123,7 @@
                                         {{ $product->product_name_en }}
                                         @endif
                                     </h1>
-                                    {{-- <div class="rating-reviews m-t-20">
+                                    <div class="rating-reviews m-t-20">
                                         <div class="row">
                                             <div class="col-sm-3">
                                                 <div class="rating rateit-small rateit"><button id="rateit-reset-5"
@@ -145,7 +145,7 @@
                                                 </div>
                                             </div>
                                         </div><!-- /.row -->
-                                    </div><!-- /.rating-reviews --> --}}
+                                    </div><!-- /.rating-reviews -->
 
                                     <div class="stock-container info-container m-t-10">
                                         <div class="row">
@@ -179,9 +179,9 @@
                                             <div class="col-sm-6">
                                                 <div class="price-box">
                                                     @if ($product->discount_price == NULL)
-                                                        <span class="price">&#8358;{{ $product->selling_price }}</span>
+                                                        <span class="price">${{ $product->selling_price }}</span>
                                                     @else
-                                                    <span class="price">&#8358;{{ $product->discount_price }}</span>
+                                                    <span class="price">${{ $product->discount_price }}</span>
                                                     <span class="price-strike">${{ $product->selling_price }}</span>
                                                     @endif
                                                 </div>
@@ -207,7 +207,7 @@
 
                                     {{-- Add product color and size --}}
 
-                                    {{-- <div class="row">
+                                    <div class="row">
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 @if ($product->product_color_en == NULL)
@@ -250,8 +250,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                    </div> --}}
-                                    <!-- /.row -->
+                                    </div><!-- /.row -->
                                     {{-- End product color and size --}}
 
                                     <div class="quantity-container info-container">
@@ -475,14 +474,14 @@
                     </div><!-- /.product-tabs -->
 
                     <!--  UPSELL PRODUCTS  -->
-                    {{-- @include('frontend.frontend_layout.product_page.up-sell-products') --}}
+                    @include('frontend.frontend_layout.product_page.up-sell-products')
                     <!--  UPSELL PRODUCTS : END  -->
                 </div><!-- /.col -->
                 <div class="clearfix"></div>
             </div>
             <!-- /.row -->
             <!--  BRANDS CAROUSEL  -->
-            {{-- @include('frontend.frontend_layout.home_page.brands-carousel') --}}
+            @include('frontend.frontend_layout.home_page.brands-carousel')
             <!-- /.logo-slider -->
             <!--  BRANDS CAROUSEL : END  -->
         </div>

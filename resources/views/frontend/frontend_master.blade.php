@@ -12,7 +12,7 @@
 <meta name="keywords" content="MediaCenter, Template, eCommerce">
 <meta name="robots" content="all">
 <title>@yield('title')</title>
-
+@stack('styles')
 @include('frontend.frontend_layout.body.style')
 
 </head>
