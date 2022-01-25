@@ -51,7 +51,7 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="col-md-3">
+                                {{-- <div class="col-md-3">
                                     <div class="form-group">
                                         <h5>SubCategory Name <span class="text-danger">*</span></h5>
                                         <select class="custom-select" name="subcategory_id" aria-label="Default select example">
@@ -61,8 +61,8 @@
                                             <span class="alert text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
-                                </div>
-                                <div class="col-md-3">
+                                </div> --}}
+                                {{-- <div class="col-md-3">
                                     <div class="form-group">
                                         <h5>Sub-SubCategory Name <span class="text-danger">*</span></h5>
                                         <select class="custom-select" name="sub_subcategory_id" aria-label="Default select example">
@@ -72,7 +72,7 @@
                                             <span class="alert text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                             {{-- First row end --}}
                             <h5 class="text-warning mt-4">Product Basic Information Area</h5>
@@ -90,7 +90,7 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="col-md-3">
+                                {{-- <div class="col-md-3">
                                     <div class="form-group">
                                         <h5>Product Name BN <span class="text-danger">*</span></h5>
                                         <div class="controls">
@@ -100,7 +100,7 @@
                                             <span class="alert text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
-                                </div>
+                                </div> --}}
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <h5>Product SKU Code # <span class="text-danger"></span></h5>
@@ -125,10 +125,10 @@
                                 </div>
                             </div>
                             {{-- Second row end --}}
-                            <h5 class="text-warning mt-4">Product Tag, Size, Color Information Area</h5>
-                            <hr>
+                            {{-- <h5 class="text-warning mt-4">Product Tag, Size, Color Information Area</h5>
+                            <hr> --}}
                             {{-- Third row start --}}
-                            <div class="row">
+                            {{-- <div class="row">
                                 <div class="col-md-2">
                                     <div class="form-group">
                                         <h5>Product Tag EN <span class="text-danger"></span></h5>
@@ -139,8 +139,8 @@
                                             <span class="alert text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
-                                </div>
-                                <div class="col-md-2">
+                                </div> --}}
+                                {{-- <div class="col-md-2">
                                     <div class="form-group">
                                         <h5>Product Tag BN <span class="text-danger"></span></h5>
                                         <div class="controls">
@@ -197,7 +197,7 @@
                                         @enderror
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                             {{-- Third row end --}}
                             <h5 class="text-warning mt-4">Product Pricing Information Area</h5>
                             <hr>
@@ -218,7 +218,7 @@
                                     <div class="form-group">
                                         <h5>Selling Price <span class="text-danger">*</span></h5>
                                         <div class="controls input-group mb-3">
-                                            <span class="input-group-text">$0.00</span>
+                                            <span class="input-group-text">&#8358;0.00</span>
                                             <input type="number" name="selling_price" class="form-control" required="" data-validation-required-message="This field is required"> <div class="help-block"></div>
                                         </div>
                                         @error('selling_price')
@@ -256,7 +256,7 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="col-md-12">
+                                {{-- <div class="col-md-12">
                                     <div class="form-group">
                                         <h5>Short Description BN <span class="text-danger"></span></h5>
                                         <div class="controls">
@@ -267,7 +267,7 @@
                                             <span class="alert text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                             {{-- Fifth row end --}}
                             {{-- Sixth row start --}}
@@ -284,7 +284,7 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="col-md-12">
+                                {{-- <div class="col-md-12">
                                     <div class="form-group">
                                         <h5>Long Description BN <span class="text-danger"></span></h5>
                                         <div class="controls">
@@ -295,7 +295,7 @@
                                             <span class="alert text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                             {{-- Sixth row end --}}
                             <h5 class="text-warning mt-4">Product Image Upload Area</h5>

@@ -23,13 +23,13 @@ class CategoryFactory extends Factory
     public function definition()
     {
         $category_name_en = $this->faker->name();
-        $category_name_bn = $this->faker->name();
+        // $category_name_bn = $this->faker->name();
 
         return [
             'category_name_en' => $category_name_en,
-            'category_name_bn' => $category_name_bn,
+            // 'category_name_bn' => $category_name_bn,
             'category_slug_en' => Str::slug($category_name_en),
-            'category_slug_bn' => Str::slug($category_name_bn),
+            // 'category_slug_bn' => Str::slug($category_name_bn),
             'category_icon' => 'fa fa-shopping-bag',
         ];
     }

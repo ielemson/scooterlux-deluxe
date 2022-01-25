@@ -137,7 +137,7 @@ Route::post('/checkout-store',[CheckoutController::class, 'checkoutStore'])->nam
 
 // Admin Login routes
 Route::group(['prefix'=> 'admin', 'middleware'=>['admin:admin']], function(){
-	Route::get('/private/login',[AdminController::class, 'loginForm']);
+	Route::get('/login',[AdminController::class, 'loginForm']);
 	Route::post('/login',[AdminController::class, 'store'])->name('admin.login');
 });
 

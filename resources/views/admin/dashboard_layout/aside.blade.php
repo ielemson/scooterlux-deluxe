@@ -11,11 +11,11 @@
 
     <div class="user-profile">
         <div class="ulogo">
-                <a href="index.html">
+                <a href="{{route('home')}}">
                 <!-- logo for regular state and mobile devices -->
                     <div class="d-flex align-items-center justify-content-center">
                         <img src="{{ asset('backend') }}/images/logo-dark.png" alt="">
-                        <h3><b>Al Araf Store</b> Admin</h3>
+                        <h3><b>ScooterLux</b> Admin</h3>
                     </div>
             </a>
         </div>

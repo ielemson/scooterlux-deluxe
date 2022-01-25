@@ -6,7 +6,7 @@
     <div id="navbar" class="main-navbar navbar navbar-expand-lg">
         <div class="container">
             <!-- logo -->
-            <a class="navbar-brand" href="./">
+            <a class="navbar-brand" href="/">
                 <img class="logo logo-light" alt="logo" src="images/logo-dark.png" srcset="{{asset('home/images/logo-white.png')}}">
                 <img class="logo logo-dark" alt="logo" src="images/logo.png" srcset="{{asset('home/images/logo-dark.png')}}">
             </a>
