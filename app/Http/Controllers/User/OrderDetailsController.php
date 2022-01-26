@@ -64,7 +64,8 @@ class OrderDetailsController extends Controller
         ->where('return_reason','!=',NULL)
         ->where('status','=', 'return')
         ->orderBy('id','DESC')->get();
-        return view('frontend.order.order-history',compact('orders'));
+        $user = Auth::user();
+        return view('frontend.order.order-history',compact('orders','user'));
     }
     public function cancelOrderList()
     {
@@ -72,6 +73,7 @@ class OrderDetailsController extends Controller
         ->where('return_reason','!=',NULL)
         ->where('status','cancel')
         ->orderBy('id','DESC')->get();
-        return view('frontend.order.order-history',compact('orders'));
+        $user = Auth::user();
+        return view('frontend.order.order-history',compact('orders','user'));
     }
 }

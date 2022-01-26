@@ -5,6 +5,7 @@
 @endsection
 
 @section('frontend_content')
+ <div class="container">
     <div class="checkout-box ">
         <div class="row">
             <div class="col-md-8">
@@ -108,22 +109,32 @@
                                             @error('state_id')
                                                 <span class="alert text-danger">{{ $message }}</span>
                                             @enderror
-                                        </div>
-
-                                        <label class="info-title" for="shippingAddrees">Shipping
-                                            Addres<span>*</span></label>
-                                        <textarea name="shipping_address" id="" cols="30" rows="10"
-                                            class="form-control unicase-form-control text-input" id="shippingAddrees"
-                                            placeholder="Example: H#05,R#02, Uttara Sector: 11, Uttara"></textarea>
-                                            @error('shipping_address')
-                                                <span class="alert text-danger">{{ $message }}</span>
-                                            @enderror
-                                            <div class="form-group">
-                                                <label class="info-title" for="shippingNotes">Shipping Notes<span></span></label>
-                                                <textarea name="shipping_notes" id="" cols="30" rows="10" class="form-control unicase-form-control text-input" id="shippingNotes" placeholder="any Shipping notes"></textarea>
-                                            </div>
+                                        </div>  
                                     </div>
+
+                                    <div class="col-md-12 col-lg-12">
+                                        <div class="form-group">
+                                            <label class="info-title" for="shippingAddrees">Shipping
+                                                Addres<span>*</span></label>
+                                            <textarea name="shipping_address" id="" cols="30" rows="5"
+                                                class="form-control unicase-form-control text-input" id="shippingAddrees"
+                                                placeholder="Example: H#05,R#02, Uttara Sector: 11, Uttara"></textarea>
+                                                @error('shipping_address')
+                                                    <span class="alert text-danger">{{ $message }}</span>
+                                                @enderror
+                                        </div>
+                                       </div>
+
+                                       <div class="col-md-12 col-lg-12">
+                                        <div class="form-group">
+                                        <label class="info-title" for="shippingNotes">Shipping Notes<span></span></label>
+                                        <textarea name="shipping_notes" id="" cols="30" rows="5" class="form-control unicase-form-control text-input" id="shippingNotes" placeholder="any Shipping notes"></textarea>
+                                    </div>
+                                       </div>
+                                   
+
                                     <!-- already-registered-login -->
+
 
                                 </div>
                             </div>
@@ -154,29 +165,29 @@
                                         <li>
                                             <strong>Qty:</strong>
                                             {{ $item->qty }}
-                                            <strong>Color:</strong>
+                                            {{-- <strong>Color:</strong>
                                             {{ $item->options->color }}
                                             <strong>Size:</strong>
                                             {{ $item->options->size }}
-                                        </li>
+                                        </li> --}}
                                     @endforeach
                                     <hr>
                                     <li>
                                         @if (Session::has('coupon'))
-                                            <strong>SubTotal: </strong> ${{ $cart_total }}
+                                            <strong>SubTotal: </strong> &#8358;{{ $cart_total }}
                                             <hr>
                                             <strong>Coupon Name: </strong> {{ session()->get('coupon')['coupon_name'] }}
                                             ( {{ session()->get('coupon')['coupon_discount'] }} %)
                                             <hr>
                                             <strong>Coupon Discount:
-                                            </strong>(-)${{ session()->get('coupon')['discount_amount'] }}
+                                            </strong>(-)&#8358;{{ session()->get('coupon')['discount_amount'] }}
                                             <hr>
                                             <strong>Grand Total: </strong>${{ session()->get('coupon')['total_amount'] }}
                                             <hr>
                                         @else
-                                            <strong>SubTotal: </strong> ${{ $cart_total }}
+                                            <strong>SubTotal: </strong> &#8358;{{ $cart_total }}
                                             <hr>
-                                            <strong>Grand Total: </strong> ${{ $cart_total }}
+                                            <strong>Grand Total: </strong> &#8358;{{ $cart_total }}
                                             <hr>
                                         @endif
 
@@ -216,15 +227,18 @@
                                 @enderror
                             </div>
                         </div>
+                        <hr>
+            <button type="submit" class="btn btn-primary checkout-page-button btn-block">Order
+                Confirm
+            </button>
                     </div>
                 </div>
             </div>
-            <hr>
-            <button type="submit" class="btn btn-primary checkout-page-button">Order
-                Confirm</button>
+            
             </form>
         </div><!-- /.row -->
     </div>
+ </div>
 @section('frontend_script')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript">
