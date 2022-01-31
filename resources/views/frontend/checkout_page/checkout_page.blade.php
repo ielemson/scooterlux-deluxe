@@ -1,7 +1,7 @@
 @extends('frontend.frontend_master')
 
 @section('title')
-    Al Araf Fashion - Checkout Page
+    ScooterLux - Checkout Page
 @endsection
 
 @section('frontend_content')
@@ -73,40 +73,43 @@
                                         <h4 class="checkout-subtitle"><b>Address Bar</b></h4>
 
                                         <div class="form-group">
-                                            <h5>Division Select <span class="text-danger">*</span></h5>
+                                            <h5>Select Country <span class="text-danger">*</span></h5>
                                             <div class="controls">
-                                                <select class="custom-select form-control unicase-form-control" aria-label="Division Select" name="division_id">
-                                                    <option selected>Select Division Name</option>
-                                                    @foreach ($divisions as $division)
-                                                        <option value="{{ $division->id }}">
-                                                            {{ $division->division_name }}</option>
-                                                    @endforeach
+                                                <select class="custom-select form-control unicase-form-control" aria-label="Country Select" name="country">
+                                                    <option value="" selected>Select Country</option>
+                                                   
+                                                    <option value="Nigeria" selected>Nigeria</option>
                                                 </select>
                                             </div>
-                                            @error('division_id')
+                                            @error('country')
                                                 <span class="alert text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
 
                                         <div class="form-group">
-                                            <h5>District Select <span class="text-danger">*</span></h5>
+                                            <h5>State Select <span class="text-danger">*</span></h5>
                                             <div class="controls">
-                                                <select class="custom-select form-control unicase-form-control" aria-label="District Select" name="district_id">
-                                                    <option selected="" disabled="">Select district Name</option>
+                                                <select class="custom-select form-control unicase-form-control" aria-label="District Select" name="state_id">
+                                                    <option selected="" disabled="">Select State</option>
+                                                    @foreach ($states as $state)
+                                                    <option value="{{ $state->id }}">
+                                                        {{ $state->name }}</option>
+                                                @endforeach
                                                 </select>
+                                               
                                             </div>
-                                            @error('district_id')
+                                            @error('state_id')
                                                 <span class="alert text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
                                         <div class="form-group">
-                                            <h5>State Select <span class="text-danger">*</span></h5>
+                                            <h5>LGA Select <span class="text-danger">*</span></h5>
                                             <div class="controls">
-                                                <select class="custom-select form-control unicase-form-control" aria-label="State Select" name="state_id">
-                                                    <option selected="" disabled="">Select state Name</option>
+                                                <select class="custom-select form-control unicase-form-control" aria-label="State Select" name="lga_id" id="lga">
+                                                    <option selected="" disabled="">Select LGA</option>
                                                 </select>
                                             </div>
-                                            @error('state_id')
+                                            @error('lga_id')
                                                 <span class="alert text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>  
@@ -131,11 +134,7 @@
                                         <textarea name="shipping_notes" id="" cols="30" rows="5" class="form-control unicase-form-control text-input" id="shippingNotes" placeholder="any Shipping notes"></textarea>
                                     </div>
                                        </div>
-                                   
-
                                     <!-- already-registered-login -->
-
-
                                 </div>
                             </div>
                             <!-- panel-body  -->
@@ -185,9 +184,14 @@
                                             <strong>Grand Total: </strong>${{ session()->get('coupon')['total_amount'] }}
                                             <hr>
                                         @else
-                                            <strong>SubTotal: </strong> &#8358;{{ $cart_total }}
+                                            <strong>SubTotal: </strong>  @php
+                                            $amounts = $cart_total
+                                            @endphp
+                                            @money($amounts, 'NGN')
                                             <hr>
-                                            <strong>Grand Total: </strong> &#8358;{{ $cart_total }}
+                                            <strong>Grand Total: </strong> 
+    
+                                            @money($amounts, 'NGN')
                                             <hr>
                                         @endif
 
@@ -202,34 +206,29 @@
 
                 <div class="checkout-progress-sidebar ">
                     <div class="panel-group">
-                        <div class="panel panel-default">
+                        {{-- <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="unicase-checkout-title">Select Payment Method</h4>
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
-                                    <label for="">Stripe</label>
-                                    <input type="radio" name="payment_method" id="" value="stripe">
-                                    <img src="{{ asset('frontend/assets/images/payments/4.png') }}" alt="">
+                                    <label for="">Paystack</label>
+                                    <input type="radio" name="payment_method" id="" value="paystack" >
+                                    <img src="{{ asset('frontend/assets/images/payments/paystack.png') }}" alt="">
                                 </div>
                                 <div class="col-md-4">
-                                    <label for="">Card</label>
+                                    <label for="">Shop</label>
                                     <input type="radio" name="payment_method" id="" value="card">
-                                    <img src="{{ asset('frontend/assets/images/payments/1.png') }}" alt="">
+                                    <img src="{{ asset('frontend/assets/images/payments/paystack.png') }}" alt="">
                                 </div>
-                                <div class="col-md-4">
-                                    <label for="">COD</label>
-                                    <input type="radio" name="payment_method" id="" value="cod">
-                                    <img src="{{ asset('frontend/assets/images/payments/6.png') }}" alt="">
-                                </div>
+                            
                                 @error('payment_method')
                                     <span class="alert text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
-                        </div>
+                        </div> --}}
                         <hr>
-            <button type="submit" class="btn btn-primary checkout-page-button btn-block">Order
-                Confirm
+              <button type="submit" class="btn btn-primary checkout-page-button btn-block"><b>Confirm Order</b>
             </button>
                     </div>
                 </div>
@@ -242,45 +241,30 @@
 @section('frontend_script')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript">
-            $(document).ready(function() {
-                $('select[name="division_id"]').on('change', function(){
-                    var division_id = $(this).val();
-                    if(division_id) {
-                        $.ajax({
-                            url: "{{  url('/division/district/ajax') }}/"+division_id,
-                            type:"GET",
-                            dataType:"json",
-                            success:function(data) {
-                                $('select[name="state_id"]').html('');
-                                var d =$('select[name="district_id"]').empty();
-                                    $.each(data, function(key, value){
-                                        $('select[name="district_id"]').append('<option value="'+ value.id +'">' + value.district_name + '</option>');
-                                    });
-                            },
-                        });
-                    } else {
-                        alert('danger');
-                    }
-                });
-            });
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
         $(document).ready(function() {
-            $('select[name="district_id"]').on('change', function(){
-                var district_id = $(this).val();
-                if(district_id) {
-                    $.ajax({
-                        url: "{{  url('/district/state/ajax') }}/"+district_id,
-                        type:"GET",
-                        dataType:"json",
-                        success:function(data) {
-                            var d =$('select[name="state_id"]').empty();
-                                $.each(data, function(key, value){
-                                    $('select[name="state_id"]').append('<option value="'+ value.id +'">' + value.state_name + '</option>');
-                                });
-                        },
-                    });
-                } else {
-                    alert('danger');
-                }
+            $('select[name="state_id"]').on('change', function(){
+                var state_id = $(this).val();
+                $.ajax({
+                    url: "{{ route('get-lga') }}",
+                    type: "POST",
+                    data: {
+                        state_id: state_id
+                    },
+                    success: function(data) {
+                        $('#lga').empty();
+                        $.each(data.lga, function(index,
+                        lga) {
+                            $('#lga').append('<option value="' + lga
+                                .id + '">' + lga.name + '</option>');
+                        })
+                        // console.log(data);
+                    }
+                })
             });
         });
     </script>

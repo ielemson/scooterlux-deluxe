@@ -7,7 +7,7 @@ use App\Mail\OrderMail;
 use App\Models\Order;
 use App\Models\OrderItem;
 use Carbon\Carbon;
-use Cart;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -110,3 +110,30 @@ class StripeController extends Controller
 		return redirect()->route('dashboard')->with($notification);
     }
 }
+
+
+  // if( $order->amount != ($paymentDetails['data']['amount']/100) ){
+                     
+                        //     $notification = [
+                        //         'message' => 'Sorry, you paid the wrong amount. Please contact admin',
+                        //         'alert-type' => 'error'
+                        //     ];
+                        //     return redirect()->route('checkout-page')->with($notification);
+                           
+                        // }
+                // Order::where('id',$paymentDetails['data']['metadata']['order_id'] )
+                // ->update(['payment_status'=> 'paid']);
+    
+    
+             // Start Send Email
+            //  $invoice = Order::findOrFail($order->id);
+            //  $data = [
+            //      'invoice_no' => $invoice->invoice_number,
+            //      'amount' => $paymentDetails['data']['amount']/100,
+            //      'name' => $invoice->name,
+            //      'email' => $invoice->email,
+            //  ];
+    
+            //  Mail::to($invoice->email)->send(new OrderMail($data));
+    
+             // End Send Email

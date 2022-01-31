@@ -5,13 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Brand extends Model
+class LGA extends Model
 {
     use HasFactory;
 
-    protected $fillable =[
-        'brand_name_en',
-        'brand_slug_en',
-        'brand_image',
-    ];
+    protected $table = "lgas";
 }

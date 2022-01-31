@@ -1,12 +1,12 @@
 @extends('frontend.frontend_master')
 
 @section('title')
-    Al Araf Fashion - Wishlist Page
+    ScooterLux- Wishlist Page
 @endsection
 
 @section('frontend_content')
-<div class="body-content">
-	<div class="container">
+<div class="body-content" style="min-height:33vh">
+	<div class="container mx-auto">
     <div class="my-wishlist-page">
         <div class="row">
             <div class="col-md-12 my-wishlist">

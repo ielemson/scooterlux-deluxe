@@ -20,11 +20,12 @@ class OrderDetailsController extends Controller
         $orderItems = OrderItem::where('order_id', $order->id)
             ->with('product')
             ->orderBy('id', 'DESC')->get();
-
+        $user = Auth::user();
             //return $orderItems;
         return view('frontend.order.order-details', compact(
             'order',
-            'orderItems'
+            'orderItems',
+            'user'
         ));
     }
 

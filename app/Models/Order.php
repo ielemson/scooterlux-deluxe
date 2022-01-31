@@ -11,6 +11,8 @@ class Order extends Model
 
     protected $guarded = ['id'];
 
+    // protected $table = "orders";
+
     public function orderItems()
     {
         return $this->hasMany(OrderItem::class);
@@ -31,8 +33,13 @@ class Order extends Model
         return $this->belongsTo(ShipDistrict::class)->withDefault();
     }
 
+    public function lga(){
+
+        return $this->belongsTo(LGA::class)->withDefault();
+    }
+
     public function state()
     {
-        return $this->belongsTo(ShipState::class)->withDefault();
+        return $this->belongsTo(State::class)->withDefault();
     }
 }

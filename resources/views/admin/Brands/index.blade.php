@@ -40,8 +40,8 @@
                                             role="grid" aria-describedby="example1_info">
                                             <thead>
                                                 <tr role="row">
-                                                    <th>Brand Name EN</th>
-                                                    <th>Brand Name BN</th>
+                                                    <th>Brand Name</th>
+                                            
                                                     <th>Brand Image</th>
                                                     <th>Action</th>
                                                 </tr>
@@ -50,18 +50,18 @@
                                                 @foreach ($brands as $item)
                                                 <tr role="row" class="odd">
                                                     <td class="sorting_1">{{ $item->brand_name_en }}</td>
-                                                    <td>{{ $item->brand_name_bn }}</td>
+                                                
                                                     <td>
                                                         <img src="{{ asset($item->brand_image) }}" alt=""
                                                         style="width: 60px; height:60px;">
                                                     </td>
                                                     <td>
                                                         <div class="input-group">
-                                                            <a href="{{ route('brands.edit', $item) }}" class="btn btn-info" title="Edit Data"><i class="fa fa-pencil"></i></a>
+                                                            <a href="{{ route('brands.edit', $item) }}" class="btn btn-info btn-sm" title="Edit Data"><i class="fa fa-pencil"></i></a>
                                                             <form action="{{ route('brands.destroy', $item) }}" method="post">
                                                                 @method('DELETE')
                                                                 @csrf
-                                                                <a href="" class="btn btn-danger" title="Delete Data" id="delete" onclick="event.preventDefault();
+                                                                <a href="" class="btn btn-danger btn-sm" title="Delete Data" id="delete" onclick="event.preventDefault();
                                                                 this.closest('form').submit();"><i class="fa fa-trash"></i></a>
                                                             </form>
                                                         </div>
@@ -131,7 +131,7 @@
                         <form action="{{ route('brands.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
-                                <h5>Brand Name EN <span class="text-danger">*</span></h5>
+                                <h5>Brand Name <span class="text-danger">*</span></h5>
                                 <div class="controls">
                                     <input type="text" name="brand_name_en" class="form-control" required="" data-validation-required-message="This field is required"> <div class="help-block"></div>
                                 </div>
@@ -139,15 +139,7 @@
                                     <span class="alert text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
-                            <div class="form-group">
-                                <h5>Brand Name BN <span class="text-danger">*</span></h5>
-                                <div class="controls">
-                                    <input type="text" name="brand_name_bn" class="form-control" required="" data-validation-required-message="This field is required"> <div class="help-block"></div>
-                                </div>
-                                @error('brand_name_bn')
-                                    <span class="alert text-danger">{{ $message }}</span>
-                                @enderror
-                            </div>
+                            
                             <div class="form-group">
                                 <h5>Brand Image <span class="text-danger">*</span></h5>
                                 <div class="controls">

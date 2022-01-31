@@ -6,7 +6,7 @@
                 <div class="cnt-account">
                     <ul class="list-unstyled">
                         
-                            <li><a href="{{ route('dashboard') }}"><i class="icon fa fa-user"></i>My Account</a></li>
+                        <li><a href="{{ route('dashboard') }}"><i class="icon fa fa-user"></i>My Account</a></li>
                         
                         <li><a href="{{ route('listWishlist') }}"><i class="icon fa fa-heart"></i>Wishlist</a></li>
                         <li><a href="{{ route('myCartView') }}"><i class="icon fa fa-shopping-cart"></i>My Cart</a></li>
@@ -35,18 +35,7 @@
                                 <li><a href="#">GBP</a></li>
                             </ul>
                         </li>
-                        <li class="dropdown dropdown-small"> <a href="#" class="dropdown-toggle" data-hover="dropdown"
-                                data-toggle="dropdown"><span class="value">
-                                 
-                                        Lang: English
-                                  
-                                </span><b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                               
-                                    <li><a href="{{ route('bangla.language') }}">বাংলা</a></li>
-                               
-                            </ul>
-                        </li>
+                       
                     </ul>
                     <!-- /.list-unstyled -->
                 </div>
@@ -172,11 +161,16 @@
                     <div class="navbar-collapse collapse" id="mc-horizontal-menu-collapse">
                         <div class="nav-outer">
                             <ul class="nav navbar-nav">
-                                <li class="active dropdown yamm-fw"> 
+                                <li class="{{ request()->is('home') ? 'active' : '' }} dropdown yamm-fw"> 
                                     <a href="{{ route('homeLanding') }}"> Home </a>
                                 </li>
-
-                                <li class=" dropdown yamm-fw"> 
+                                @auth
+                                <li class="{{ request()->is('dashboard') ? 'active' : '' }}"> 
+                                    <a href="{{ route('dashboard') }}"> Dasboard </a>
+                                </li> 
+                                @endauth
+                               
+                                <li class="{{ request()->is('products') ? 'active' : '' }} dropdown yamm-fw"> 
                                     <a href="{{ route('home') }}">
                                         Products
                                     </a>

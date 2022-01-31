@@ -51,17 +51,17 @@ class BrandController extends Controller
 
             Brand::create([
                 'brand_name_en' => $request->input('brand_name_en'),
-                'brand_name_bn' => $request->input('brand_name_bn'),
+          
                 'brand_slug_en' => Str::slug($request->input('brand_slug_en')),
-                'brand_slug_bn' => Str::slug($request->input('brand_slug_bn')),
+   
                 'brand_image' => $save_url
             ]);
         }else{
             Brand::create([
                 'brand_name_en' => $request->input('brand_name_en'),
-                'brand_name_bn' => $request->input('brand_name_bn'),
+                
                 'brand_slug_en' => Str::slug($request->input('brand_slug_en')),
-                'brand_slug_bn' => Str::slug($request->input('brand_slug_bn')),
+               
             ]);
         }
 
@@ -116,17 +116,17 @@ class BrandController extends Controller
 
             $brand->update([
                 'brand_name_en' => $request->input('brand_name_en'),
-                'brand_name_bn' => $request->input('brand_name_bn'),
+            
                 'brand_slug_en' => Str::slug($request->input('brand_slug_en')),
-                'brand_slug_bn' => Str::slug($request->input('brand_slug_bn')),
+                
                 'brand_image' => $save_url
             ]);
         }else{
             $brand->update([
                 'brand_name_en' => $request->input('brand_name_en'),
-                'brand_name_bn' => $request->input('brand_name_bn'),
+            
                 'brand_slug_en' => Str::slug($request->input('brand_slug_en')),
-                'brand_slug_bn' => Str::slug($request->input('brand_slug_bn')),
+                
             ]);
         }
 

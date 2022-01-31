@@ -28,15 +28,7 @@
                                     <span class="alert text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
-                            <div class="form-group">
-                                <h5>Brand Name BN <span class="text-danger">*</span></h5>
-                                <div class="controls">
-                                    <input type="text" name="brand_name_bn" value="{{ $brand->brand_name_bn }}" class="form-control" required="" data-validation-required-message="This field is required"> <div class="help-block"></div>
-                                </div>
-                                @error('brand_name_bn')
-                                    <span class="alert text-danger">{{ $message }}</span>
-                                @enderror
-                            </div>
+                          
                             <div class="form-group">
                                 <h5>Brand Image <span class="text-danger">*</span></h5>
                                 <div class="controls">

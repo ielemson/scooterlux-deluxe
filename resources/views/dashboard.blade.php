@@ -11,7 +11,9 @@
 </x-app-layout> --}}
 
 @extends('frontend.frontend_master')
-
+@section('title')
+ScooterLux Dashboard
+@endsection
 @section('frontend_content')
 <div class="body-content">
     <div class="container">

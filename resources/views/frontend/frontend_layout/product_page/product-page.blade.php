@@ -39,13 +39,12 @@
                             </div><!-- /.gallery-holder -->
                             <div class="col-sm-6 col-md-7 product-info-block">
                                 <div class="product-info">
-                                    <h1 class="name" id="pname">
-                                        @if (session()->get('language') =='bangla')
-                                        {{ $product->product_name_bn }}
-                                        @else
+                                    <h class="name" id="pname">
+                                       
                                         {{ $product->product_name_en }}
-                                        @endif
-                                    </h1>
+                                       
+                                    </h
+                                    1>
                                   
 
                                     <div class="stock-container info-container m-t-10">
@@ -157,11 +156,9 @@
                                     <div id="description" class="tab-pane in active">
                                         <div class="product-tab">
                                             <p class="text">
-                                                @if (session()->get('language') == 'bangla')
-                                                {!! $product->long_description_bn !!}
-                                                @else
-                                                {!! $product->long_description_en !!}
-                                                @endif
+                                            
+                                            {!! $product->long_description_en !!}
+                                       
                                             </p>
                                         </div>
                                     </div><!-- /.tab-pane -->

@@ -25,7 +25,9 @@
   @include('frontend.frontend_layout.body.breadcrumb')
 @endif
 
-@yield('frontend_content')
+<div class="container">
+    @yield('frontend_content')
+</div>
 
 <!--  FOOTER  -->
 @include('frontend.frontend_layout.body.footer')
