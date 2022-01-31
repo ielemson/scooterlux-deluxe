@@ -1,7 +1,7 @@
 @extends('frontend.frontend_master')
 
 @section('title')
-   ScooterLux Fashion
+   ScooterLux Products
 @endsection
 
 @section('frontend_content')

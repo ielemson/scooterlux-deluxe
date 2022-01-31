@@ -1,5 +1,9 @@
 @extends('frontend.frontend_master')
 
+@section('title')
+ScooterLux Product
+@endsection
+
 @section('frontend_content')
     <div class="body-content outer-top-xs">
         <div class="container">
