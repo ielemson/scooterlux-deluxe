@@ -68,6 +68,40 @@
         </ul>
     </li>
 
+ 
+    
+    <li class="treeview {{ ($route == 'brands.index') ? 'active' : '' }}">
+        <a href="#">
+        <i data-feather="message-circle"></i>
+        <span>Customers</span>
+        <span class="pull-right-container">
+            <i class="fa fa-angle-right pull-right"></i>
+        </span>
+        </a>
+        <ul class="treeview-menu">
+        <li class=" {{ ($route == 'brands.index') ? 'active' : '' }}">
+            <a href="{{ route('brands.index') }}"><i class="ti-more"></i>All Customers</a>
+        </li>
+        </ul>
+    </li>
+
+
+    <li class="treeview {{ ($route == 'brands.index') ? 'active' : '' }}">
+        <a href="#">
+        <i data-feather="message-circle"></i>
+        <span>Transactions</span>
+        <span class="pull-right-container">
+            <i class="fa fa-angle-right pull-right"></i>
+        </span>
+        </a>
+        <ul class="treeview-menu">
+        <li class=" {{ ($route == 'brands.index') ? 'active' : '' }}">
+            <a href="{{ route('brands.index') }}"><i class="ti-more"></i>All Transactions</a>
+        </li>
+        </ul>
+    </li>
+
+
     <li class="treeview {{ ($route == 'brands.index') ? 'active' : '' }}">
         <a href="#">
         <i data-feather="message-circle"></i>
@@ -82,6 +116,9 @@
         </li>
         </ul>
     </li>
+
+
+
     <li class="treeview {{ ($route == 'categories.index') ? 'active' : '' }}">
         <a href="#">
         <i data-feather="message-circle"></i>
@@ -147,6 +184,7 @@
             </li>
         </ul>
     </li>
+    
     <li class="treeview {{ ($prefix == '/division') ? 'active' : '' }}">
         <a href="#">
         <i data-feather="file"></i> <span>Shipping Area</span>
@@ -191,12 +229,12 @@
     </ul>
 </section>
 
-{{-- <div class="sidebar-footer">
+ <div class="sidebar-footer">
     <!-- item-->
     <a href="javascript:void(0)" class="link" data-toggle="tooltip" title="" data-original-title="Settings" aria-describedby="tooltip92529"><i class="ti-settings"></i></a>
     <!-- item-->
-    <a href="mailbox_inbox.html" class="link" data-toggle="tooltip" title="" data-original-title="Email"><i class="ti-email"></i></a>
+    <a href="javascript:void(0)" class="link" data-toggle="tooltip" title="" data-original-title="Email"><i class="ti-email"></i></a>
     <!-- item-->
     <a href="{{ route('admin.logout') }}" class="link" data-toggle="tooltip" title="" data-original-title="Logout"><i class="ti-lock"></i></a>
-</div> --}}
+</div> 
 </aside>

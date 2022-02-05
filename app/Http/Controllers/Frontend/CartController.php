@@ -14,15 +14,15 @@ class CartController extends Controller
 {
     public function addToCart(Request $request, $id)
     {
-        $product = Product::findOrFail($id);
+        $product = Product::where('id',$id)->first();
         if(Session::has('coupon')){
             Session::forget('coupon');
         }
 
-        if($product->discount_price == NULL){
+        // if($product->discount_price == NULL){
             Cart::add([
-                'id' => $id,
-                'name' => $request->product_name,
+                'id' => $product->id,
+                'name' => $product->product_name_en,
                 'qty' => $request->qty,
                 'price' => $product->selling_price,
                 'weight' => 1,
@@ -34,21 +34,22 @@ class CartController extends Controller
             ]);
 
             return response()->json(['success' => 'Successfully added on your cart'],200);
-        }else{
-            Cart::add([
-                'id' => $id,
-                'name' => $request->product_name,
-                'qty' => $request->qty,
-                'price' => $product->discount_price,
-                'weight' => 1,
-                'options' => [
-                    'image' => $product->product_thumbnail,
-                    'size' => $request->size,
-                    'color' => $request->color,
-                    ]
-            ]);
-            return response()->json(['success' => 'Successfully added on your cart'],200);
-        }
+        // }
+        // else{
+        //     Cart::add([
+        //         'id' => $id,
+        //         'name' => $request->product_name,
+        //         'qty' => $request->qty,
+        //         'price' => $product->discount_price,
+        //         'weight' => 1,
+        //         'options' => [
+        //             'image' => $product->product_thumbnail,
+        //             'size' => $request->size,
+        //             'color' => $request->color,
+        //             ]
+        //     ]);
+        //     return response()->json(['success' => 'Successfully added on your cart'],200);
+        // }
     }
 
     public function getMiniCart()

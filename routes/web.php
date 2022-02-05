@@ -128,10 +128,13 @@ Route::post('/get-lga',[CheckoutController::class,'getLga'])->name('get-lga');
 Route::get('/division/district/ajax/{division_id}', [CheckoutController::class, 'getDistrict']);
 Route::get('/district/state/ajax/{district_id}', [CheckoutController::class, 'getState']);
 Route::post('/checkout-store',[CheckoutController::class, 'checkoutStore'])->name('checkout.store');
+
+
 // Payment route
 Route::post('/pay', [App\Http\Controllers\PaymentController::class, 'redirectToGateway'])->name('pay');
 // Laravel 8
 Route::get('/payment/callback', [App\Http\Controllers\PaymentController::class, 'handleGatewayCallback']);
+Route::get('/payment/details', [App\Http\Controllers\PaymentController::class, 'handlePaymentDetails']);
 
 
 

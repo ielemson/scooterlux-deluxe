@@ -98,18 +98,7 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <h5>Product Name BN <span class="text-danger">*</span></h5>
-                                        <div class="controls">
-                                            <input type="text" name="product_name_bn" value="{{ old('product_name_bn', $product->product_name_bn) }}"
-                                            class="form-control" required="" data-validation-required-message="This field is required"> <div class="help-block"></div>
-                                        </div>
-                                        @error('product_name_bn')
-                                            <span class="alert text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                </div>
+                             
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <h5>Product SKU Code # <span class="text-danger"></span></h5>
@@ -152,18 +141,7 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="col-md-2">
-                                    <div class="form-group">
-                                        <h5>Product Tag BN <span class="text-danger"></span></h5>
-                                        <div class="controls">
-                                            <input type="text" name="product_tags_bn" value="{{ old('product_tags_bn', $product->product_tags_bn) }}"
-                                            class="form-control" data-role="tagsinput"> <div class="help-block"></div>
-                                        </div>
-                                        @error('product_tags_bn')
-                                            <span class="alert text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                </div>
+                               
                                 <div class="col-md-2">
                                     <div class="form-group">
                                         <h5>Product Size EN <span class="text-danger"></span></h5>
@@ -176,19 +154,7 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="col-md-2">
-                                    <div class="form-group">
-                                        <h5>Product Size BN <span class="text-danger"></span></h5>
-                                        <div class="controls">
-                                            <input type="text" name="product_size_bn" value="{{ old('product_size_bn', $product->product_size_bn) }}"
-                                            class="form-control" data-role="tagsinput">
-                                            <div class="help-block"></div>
-                                        </div>
-                                        @error('product_size_bn')
-                                            <span class="alert text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                </div>
+                               
                                 <div class="col-md-2">
                                     <div class="form-group">
                                         <h5>Product Color EN <span class="text-danger"></span></h5>
@@ -202,18 +168,7 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="col-md-2">
-                                    <div class="form-group">
-                                        <h5>Product Color BN <span class="text-danger"></span></h5>
-                                        <div class="controls">
-                                            <input type="text" name="product_color_bn" value="{{ old('product_color_bn', $product->product_color_bn) }}"
-                                            class="form-control" data-role="tagsinput"><div class="help-block"></div>
-                                        </div>
-                                        @error('product_color_bn')
-                                            <span class="alert text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                </div>
+                                
                             </div>
                             {{-- Third row end --}}
                             <h5 class="text-warning mt-4">Product Pricing Information Area</h5>
@@ -278,20 +233,7 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <h5>Short Description BN <span class="text-danger"></span></h5>
-                                        <div class="controls">
-                                            <textarea name="short_description_bn" id="editor2" cols="30" rows="5" class="form-control">
-                                                {{ old('short_description_bn', $product->short_description_bn) }}
-                                            </textarea>
-                                            <div class="help-block"></div>
-                                        </div>
-                                        @error('short_description_bn')
-                                            <span class="alert text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                </div>
+                               
                             </div>
                             {{-- Fifth row end --}}
                             {{-- Sixth row start --}}
@@ -310,20 +252,7 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <h5>Long Description BN <span class="text-danger"></span></h5>
-                                        <div class="controls">
-                                            <textarea name="long_description_bn" id="editor4" cols="30" rows="5" class="form-control">
-                                                {{ old('long_description_bn', $product->long_description_bn) }}
-                                            </textarea>
-                                            <div class="help-block"></div>
-                                        </div>
-                                        @error('long_description_bn')
-                                            <span class="alert text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                </div>
+                            
                             </div>
                             {{-- Sixth row end --}}
                             <h5 class="text-warning mt-4">Product Image Upload Area</h5>

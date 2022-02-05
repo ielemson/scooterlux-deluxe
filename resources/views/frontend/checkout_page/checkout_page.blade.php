@@ -184,7 +184,8 @@
                                             <strong>Grand Total: </strong>${{ session()->get('coupon')['total_amount'] }}
                                             <hr>
                                         @else
-                                            <strong>SubTotal: </strong>  @php
+                                            <strong>SubTotal: </strong>
+                                             @php
                                             $amounts = $cart_total
                                             @endphp
                                             @money($amounts, 'NGN')

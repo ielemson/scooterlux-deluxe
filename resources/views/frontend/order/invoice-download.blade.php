@@ -1,150 +1,287 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Invoice</title>
+    <!--  This file has been downloaded from bootdey.com @bootdey on twitter -->
+    <!--  All snippets are MIT license http://bootdey.com/license -->
+    <title>white invoice - Bootdey.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet"> --}}
+	{{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script> --}}
 
-<style type="text/css">
-    * {
-        font-family: Verdana, Arial, sans-serif;
-    }
-    table{
-        font-size: x-small;
-    }
-    tfoot tr td{
-        font-weight: bold;
-        font-size: x-small;
-    }
-    .gray {
-        background-color: lightgray
-    }
-    .font{
-      font-size: 15px;
-    }
-    .authority {
-        /*text-align: center;*/
-        float: right
-    }
-    .authority h5 {
-        margin-top: -10px;
-        color: green;
-        /*text-align: center;*/
-        margin-left: 35px;
-    }
-    .thanks p {
-        color: green;;
-        font-size: 16px;
-        font-weight: normal;
-        font-family: serif;
-        margin-top: 20px;
-    }
-</style>
-
+  @include('frontend.order.boostrap')
 </head>
 <body>
+<div class="container-fluid">
+<div class="row gutters">
+		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+			<div class="card">
+				<div class="card-body p-0">
+					<div class="invoice-container">
+						<div class="invoice-header">
+							<!-- Row start -->
+						
+							<!-- Row end -->
+							<!-- Row start -->
+							<div class="row gutters">
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+									<a href="index.html" class="invoice-logo">
+										Maxwell
+									</a>
+								</div>
+								<div class="col-lg-6 col-md-6 col-sm-6">
+									<address class="text-right">
+										Maxwell admin Inc, 45 NorthWest Street.<br>
+										Sunrise Blvd, San Francisco.<br>
+										00000 00000
+									</address>
+								</div>
+							</div>
+							<!-- Row end -->
+							<!-- Row start -->
+							<div class="row gutters">
+								<div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+									<div class="invoice-details">
+										<address>
+											Alex Maxwell<br>
+											150-600 Church Street, Florida, USA
+										</address>
+									</div>
+								</div>
+								<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+									<div class="invoice-details">
+										<div class="invoice-num">
+											<div>Invoice - #009</div>
+											<div>January 10th 2020</div>
+										</div>
+									</div>													
+								</div>
+							</div>
+							<!-- Row end -->
+						</div>
+						<div class="invoice-body">
+							<!-- Row start -->
+							<div class="row gutters">
+								<div class="col-lg-12 col-md-12 col-sm-12">
+									<div class="table-responsive">
+										<table class="table custom-table m-0">
+											<thead>
+												<tr>
+													<th>Items</th>
+													<th>Product ID</th>
+													<th>Quantity</th>
+													<th>Sub Total</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>
+														Wordpress Template
+														<p class="m-0 text-muted">
+															Reference site about Lorem Ipsum, giving information on its origins.
+														</p>
+													</td>
+													<td>#50000981</td>
+													<td>9</td>
+													<td>$5000.00</td>
+												</tr>
+												<tr>
+													<td>
+														Maxwell Admin Template
+														<p class="m-0 text-muted">
+															As well as a random Lipsum generator.
+														</p>
+													</td>
+													<td>#50000126</td>
+													<td>5</td>
+													<td>$100.00</td>
+												</tr>
+												<tr>
+													<td>
+														Unify Admin Template
+														<p class="m-0 text-muted">
+															Lorem ipsum has become the industry standard.
+														</p>
+													</td>
+													<td>#50000821</td>
+													<td>6</td>
+													<td>$49.99</td>
+												</tr>
+												<tr>
+													<td>&nbsp;</td>
+													<td colspan="2">
+														<p>
+															Subtotal<br>
+															Shipping &amp; Handling<br>
+															Tax<br>
+														</p>
+														<h5 class="text-success"><strong>Grand Total</strong></h5>
+													</td>			
+													<td>
+														<p>
+															$5000.00<br>
+															$100.00<br>
+															$49.00<br>
+														</p>
+														<h5 class="text-success"><strong>$5150.99</strong></h5>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+							<!-- Row end -->
+						</div>
+						<div class="invoice-footer">
+							Thank you for your Business.
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
-  <table width="100%" style="background: #F7F7F7; padding:0 20px 0 20px;">
-    <tr>
-        <td valign="top">
-          <!-- {{-- <img src="" alt="" width="150"/> --}} -->
-          <h2 style="color: green; font-size: 26px;"><strong>{{ env('APP_NAME') }}</strong></h2>
-        </td>
-        <td align="right">
-            <pre class="font" >
-               {{ env('APP_NAME') }}
-               Email:{{ env('MAIL_FROM_ADDRESS') }}
-               Mob: {{ env('MOBILE_NUMBER') }}
-               {{ env('BUSINESS_ADDRESS') }}
+<style type="text/css">
+body{margin-top:20px;
+    color: #2e323c;
+    background: #f5f6fa;
+    position: relative;
+    height: 100%;
+}
+.invoice-container {
+    padding: 1rem;
+}
+.invoice-container .invoice-header .invoice-logo {
+    margin: 0.8rem 0 0 0;
+    display: inline-block;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #2e323c;
+}
+.invoice-container .invoice-header .invoice-logo img {
+    max-width: 130px;
+}
+.invoice-container .invoice-header address {
+    font-size: 0.8rem;
+    color: #9fa8b9;
+    margin: 0;
+}
+.invoice-container .invoice-details {
+    margin: 1rem 0 0 0;
+    padding: 1rem;
+    line-height: 180%;
+    background: #f5f6fa;
+}
+.invoice-container .invoice-details .invoice-num {
+    text-align: right;
+    font-size: 0.8rem;
+}
+.invoice-container .invoice-body {
+    padding: 1rem 0 0 0;
+}
+.invoice-container .invoice-footer {
+    text-align: center;
+    font-size: 0.7rem;
+    margin: 5px 0 0 0;
+}
 
-            </pre>
-        </td>
-    </tr>
+.invoice-status {
+    text-align: center;
+    padding: 1rem;
+    background: #ffffff;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+.invoice-status h2.status {
+    margin: 0 0 0.8rem 0;
+}
+.invoice-status h5.status-title {
+    margin: 0 0 0.8rem 0;
+    color: #9fa8b9;
+}
+.invoice-status p.status-type {
+    margin: 0.5rem 0 0 0;
+    padding: 0;
+    line-height: 150%;
+}
+.invoice-status i {
+    font-size: 1.5rem;
+    margin: 0 0 1rem 0;
+    display: inline-block;
+    padding: 1rem;
+    background: #f5f6fa;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+}
+.invoice-status .badge {
+    text-transform: uppercase;
+}
 
-  </table>
+@media (max-width: 767px) {
+    .invoice-container {
+        padding: 1rem;
+    }
+}
 
 
-  <table width="100%" style="background:white; padding:2px;""></table>
-
-  <table width="100%" style="background: #F7F7F7; padding:0 5 0 5px;" class="font">
-    <tr>
-        <td>
-          <p class="font" style="margin-left: 20px;">
-           <strong>Name:</strong> {{ $order->name }} <br>
-           <strong>Email:</strong> {{ $order->email }} <br>
-           <strong>Phone:</strong> {{ $order->phone }} <br>
-
-           <strong>Address:</strong> {{ $order->address }} <br>
-           <strong>Location:</strong>
-           {{ $order->state->state_name }},
-           {{ $order->district->district_name }},
-           {{ $order->division->division_name }} <br>
-           <strong>Post Code:</strong> {{ $order->post_code }}
-         </p>
-        </td>
-        <td>
-          <p class="font">
-            <h3><span style="color: green;">Invoice:</span> #{{ $order->invoice_number }}</h3>
-            Order Date: {{ $order->created_at }} <br>
-            Delivery Date: {{ $order->delivered_date }} <br>
-            Payment Type : {{ $order->payment_type }} <br>
-            Payment Method: {{ $order->payment_method }}
-        </span>
-         </p>
-        </td>
-    </tr>
-  </table>
-  <br/>
-<h3>Products</h3>
+.custom-table {
+    border: 1px solid #e0e3ec;
+}
+.custom-table thead {
+    background: #007ae1;
+}
+.custom-table thead th {
+    border: 0;
+    color: #ffffff;
+}
+.custom-table > tbody tr:hover {
+    background: #fafafa;
+}
+.custom-table > tbody tr:nth-of-type(even) {
+    background-color: #ffffff;
+}
+.custom-table > tbody td {
+    border: 1px solid #e6e9f0;
+}
 
 
-  <table width="100%">
-    <thead style="background-color: green; color:#FFFFFF;">
-        <tr class="font">
-        {{-- <th>Image</th> --}}
-        <th>Product Name</th>
-        <th>Size</th>
-        <th>Color</th>
-        <th>Code</th>
-        <th>Quantity</th>
-        <th>Unit Price </th>
-        <th>Total </th>
-      </tr>
-    </thead>
-    <tbody>
+.card {
+    background: #ffffff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 0;
+    margin-bottom: 1rem;
+}
 
-        @foreach ($orderItems as $item)
-      <tr class="font">
-        {{-- <td align="center">
-            <img src="{{ asset($item->product->product_thambnail)  }}" height="60px;" width="60px;" alt="">
-        </td> --}}
-        <td align="center">{{ $item->product->product_name_en }}</td>
-        <td align="center">{{ $item->size }}</td>
-        <td align="center">{{ $item->color }}</td>
-        <td align="center">{{ $item->product->product_code }}</td>
-        <td align="center">{{ $item->qty }}</td>
-        <td align="center">{{ $item->unit_price }}</td>
-        <td align="center">{{ $order->amount }}</td>
-      </tr>
-      @endforeach
-    </tbody>
-  </table>
-  <br>
-  <table width="100%" style=" padding:0 10px 0 10px;">
-    <tr>
-        <td align="right" >
-            <h2><span style="color: green;">Subtotal:</span>$ {{ $order->amount }}</h2>
-            <h2><span style="color: green;">Total:</span> $ {{ $order->amount }}</h2>
-            {{-- <h2><span style="color: green;">Full Payment PAID</h2> --}}
-        </td>
-    </tr>
-  </table>
-  <div class="thanks mt-3">
-    <p>Thanks For Buying Products..!!</p>
-  </div>
-  <div class="authority float-right mt-5">
-      <p>-----------------------------------</p>
-      <h5>Authority Signature:</h5>
-    </div>
+.text-success {
+    color: #00bb42 !important;
+}
+
+.text-muted {
+    color: #9fa8b9 !important;
+}
+
+.custom-actions-btns {
+    margin: auto;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.custom-actions-btns .btn {
+    margin: .3rem 0 .3rem .3rem;
+}
+</style>
+
+<script type="text/javascript">
+
+</script>
 </body>
 </html>

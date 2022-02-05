@@ -30,3 +30,4 @@ class AdminRedirectIfAuthenticated
         return $next($request);
     }
 }
+

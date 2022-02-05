@@ -27,7 +27,7 @@
                                                     <th>#</th>
                                                     <th>Category ICON</th>
                                                     <th>Category Name EN</th>
-                                                    <th>Category Name BN</th>
+                                                 
                                                     <th>Category Image</th>
                                                     <th>Action</th>
                                                 </tr>
@@ -38,7 +38,7 @@
                                                     <td>{{ $loop->index+1 }}</td>
                                                     <td>{{ $item->category_icon }}</td>
                                                     <td class="sorting_1">{{ $item->category_name_en }}</td>
-                                                    <td>{{ $item->category_name_bn }}</td>
+                                                
                                                     <td>
                                                         <img src="{{ asset($item->category_image) }}" alt="" style="width: 70px; height:40px;">
                                                     </td>

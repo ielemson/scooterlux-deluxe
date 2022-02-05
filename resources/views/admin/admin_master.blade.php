@@ -17,7 +17,8 @@
 
 </head>
 
-<body class="hold-transition light-skin sidebar-mini theme-primary fixed">
+<body class="hold-transition dark-skin sidebar-mini theme-primary fixed">
+{{-- <body class="hold-transition light-skin sidebar-mini theme-primary fixed"> --}}
 	
 <div class="wrapper">
 
@@ -41,7 +42,7 @@
 {{-- Footer END --}}
 
 <!-- Control Sidebar -->
-@include('admin.dashboard_layout.sidebar')
+{{-- @include('admin.dashboard_layout.sidebar') --}}
 <!-- /.control-sidebar -->
 
 <!-- Add the sidebar's background. This div must be placed immediately after the control sidebar -->

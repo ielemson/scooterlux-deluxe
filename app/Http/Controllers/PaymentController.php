@@ -111,4 +111,13 @@ class PaymentController extends Controller
 
 
     }
+
+
+    public function handlePaymentDetails(){
+
+        $paymentData = Paystack::getPaymentData();
+
+        dd($paymentData);
+
+    }
 }

@@ -18,27 +18,27 @@
                         <table class="table">
                             <tr>
                                 <th> Shipping Name : </th>
-                                <th> {{ $order->name }} </th>
+                                <th> {{ $order->shipping_name }} </th>
                             </tr>
                             <tr>
                                 <th> Shipping Phone : </th>
-                                <th> {{ $order->phone }} </th>
+                                <th> {{ $order->shipping_phone }} </th>
                             </tr>
                             <tr>
                                 <th> Shipping Email : </th>
-                                <th> {{ $order->email }} </th>
-                            </tr>
-                            <tr>
-                                <th> Division : </th>
-                                <th> {{ $order->division->division_name }} </th>
-                            </tr>
-                            <tr>
-                                <th> District : </th>
-                                <th> {{ $order->district->district_name }} </th>
+                                <th> {{ $order->shipping_email }} </th>
                             </tr>
                             <tr>
                                 <th> State : </th>
-                                <th>{{ $order->state->state_name }} </th>
+                                <th> {{ $order->state->name }} </th>
+                            </tr>
+                            <tr>
+                                <th> LGA : </th>
+                                <th> {{ $order->lga->name }} </th>
+                            </tr>
+                            <tr>
+                                <th> Country : </th>
+                                <th>{{ $order->country }} </th>
                             </tr>
                             <tr>
                                 <th> Post Code : </th>
@@ -86,7 +86,7 @@
                             </tr>
                             <tr>
                                 <th> Order Total : </th>
-                                <th>$ {{ $order->amount }} </th>
+                                <th>@money($order->amount, 'NGN')</th>
                             </tr>
                             <tr>
                                 <th> Status : </th>
@@ -197,7 +197,11 @@
                                             </td>
 
                                             <td class="col-md-3">
-                                                <label for=""> ${{ $item->unit_price }} ( $ {{ $item->unit_price * $item->qty }} ) </label>
+                                                <label for=""> 
+                                                    {{-- ${{ $item->unit_price }} ( $ {{ $item->unit_price * $item->qty }} ) --}}
+                                                {{-- @money($item->unit_price,'NGN') --}}
+                                                 @money($item->unit_price * $item->qty, 'NGN')
+                                                </label>
                                             </td>
                                             @php
                                                 $file = App\Models\Product::where('id', $item->product_id)->first();

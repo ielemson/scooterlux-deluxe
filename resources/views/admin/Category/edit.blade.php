@@ -29,15 +29,7 @@
                                     <span class="alert text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
-                            <div class="form-group">
-                                <h5>Category Name BN <span class="text-danger">*</span></h5>
-                                <div class="controls">
-                                    <input type="text" value="{{ old('category_name_bn', $category->category_name_bn) }}" name="category_name_bn" class="form-control" required="" data-validation-required-message="This field is required"> <div class="help-block"></div>
-                                </div>
-                                @error('category_name_bn')
-                                    <span class="alert text-danger">{{ $message }}</span>
-                                @enderror
-                            </div>
+                            
                             <div class="form-group">
                                 <h5>Category Icon <span class="text-danger"></span></h5>
                                 <div class="controls">
