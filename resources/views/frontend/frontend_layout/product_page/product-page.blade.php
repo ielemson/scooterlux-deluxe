@@ -136,7 +136,6 @@ ScooterLux Product
                                                     <i class="fa fa-shopping-cart inner-right-vs"></i> ADD TO CART</button>
                                             </div>
 
-
                                         </div><!-- /.row -->
                                     </div><!-- /.quantity-container -->
                                 </div><!-- /.product-info -->

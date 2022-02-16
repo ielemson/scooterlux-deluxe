@@ -35,7 +35,7 @@ class CheckoutController extends Controller
         'shipping_name' => 'required',
         'shipping_email' => 'required',
         'shipping_phone' => 'required',
-        'shipping_postCode' => 'required',
+        // 'shipping_postCode' => 'required',
         'country' => 'required',
         'state_id' => 'required|numeric',
         'lga_id' => 'required|numeric',
@@ -93,7 +93,7 @@ class CheckoutController extends Controller
         $cart_qty = Cart::count();
         $cart_total = Cart::total();
 
-             return view('frontend.payment.paystack', compact(
+             return view('shop.payment.paystack', compact(
                 'cart_total',
                 'carts',
                 'cart_qty',
@@ -149,7 +149,7 @@ class CheckoutController extends Controller
 
                 $divisions = ShipDivision::with(['districts', 'states'])->latest()->get();
                 //return $divisions;
-                return view('frontend.checkout_page.checkout_page', compact(
+                return view('shop.auth.checkout', compact(
                     'carts',
                     'cart_qty',
                     'cart_total',

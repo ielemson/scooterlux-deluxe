@@ -14,13 +14,13 @@ $(window).load(function() {
 
         $('body').vegas({
             slides: [
-                { src: 'landing/img/slide-1.jpg' },
-                { src: 'landing/img/slide-2.jpg' },
-                { src: 'landing/img/slide-3.jpg' },
+                { src: 'landing/img/slider_1.jpg' },
+                { src: 'landing/img/slider_2.jpg' },
+                { src: 'landing/img/slider_3.jpg' },
             ],
 
             // Delay beetween slides in milliseconds.
-            delay: 5000,
+            delay: 10000,
 
             // Chose your transition effect (See the documentation provided in your download pack)
             transition: 'fade'

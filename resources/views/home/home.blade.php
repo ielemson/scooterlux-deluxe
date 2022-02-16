@@ -8,6 +8,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="images/favicon.png" type="image/png" sizes="16x16">
     <!-- Vendor Bundle CSS -->
+
+    <link rel="shortcut icon" href="{{asset('home/images/favicon.png')}}">
+    <!-- Retina iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="144x144" href="{{asset('home/images/favicon.png')}}">
+    <!-- Retina iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="114x114" href="{{asset('home/images/favicon.png')}}">
+    <!-- Standard iPad Touch Icon--> 
+    <link rel="apple-touch-icon" sizes="72x72" href="{{asset('home/images/favicon.png')}}">
+    <!-- Standard iPhone Touch Icon--> 
+    <link rel="apple-touch-icon" sizes="57x57" href="{{asset('home/images/favicon.png')}}">
+
     <link rel="stylesheet" href="{{asset('home/assets/css/vendor.bundle.css')}}">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{asset('home/assets/css/style.css')}}">
@@ -146,8 +157,6 @@
     </div>
     <!-- End Feature -->
 
-  
-
     <!-- Product Section -->
         @if (count($products) > 0)
         @include('home.partials.products')
@@ -157,8 +166,6 @@
     <!-- Subscribe -->
    @include('home.partials.subscribe')
     <!-- End Section -->
-
-   
 
     <!-- Contact -->
     <div id="contact" class="section section-pad contact">
@@ -217,18 +224,16 @@
         </div><!-- /.container -->
     </div><!-- /.contact -->
 
-  
-
     <!-- Footer -->
     <div class="section footer-sec">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-6 text-center">
-                    <div class="footer-logo">
-                        <a href="index-2.html">
+                    {{-- <div class="footer-logo">
+                        <a href="">
                             <img src="{{asset('home/images/logo-white.png')}}" alt="">
                         </a>
-                    </div>
+                    </div> --}}
                     <ul class="footer-social">
                         <li><a href="#" class="icon-box circle"><em class="fa fa-facebook" aria-hidden="true"></em></a></li>
                         <li><a href="#" class="icon-box circle"><em class="fa fa-twitter" aria-hidden="true"></em></a></li>
@@ -236,7 +241,7 @@
                         <li><a href="#" class="icon-box circle"><em class="fa fa-pinterest-p" aria-hidden="true"></em></a></li>
                         <li><a href="#" class="icon-box circle"><em class="fa fa-youtube" aria-hidden="true"></em></a></li>
                     </ul>
-                    <p>Copyright &copy; {{Date('Y')}} <a href="#" class="c-p">ScooterLux </a></p>
+                    <p>Copyright &copy; {{Date('Y')}} <b href="#">ScooterLux </b></p>
                 </div>
             </div>
         </div>

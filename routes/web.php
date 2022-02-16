@@ -40,9 +40,7 @@ use App\Http\Controllers\User\WishlistController;
 
 
 Route::middleware(['auth:web'])->group(function(){
-
     Route::middleware(['auth:sanctum, web', 'verified'])->get('/dashboard',[FrontendUserProfileController::class, 'userdashboard'])->name('dashboard');
-
     Route::prefix('/user')->group(function () {
         Route::get('/logout', [FrontendUserProfileController::class, 'userlogout'])->name('user.logout');
         Route::get('/profile', [FrontendUserProfileController::class, 'userprofile'])->name('user.profile');

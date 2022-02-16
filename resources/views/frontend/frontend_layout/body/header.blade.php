@@ -54,7 +54,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-3 logo-holder">
                     <!--  LOGO  -->
                     <div class="logo"> <a href="{{ route('home') }}">
-                         <img src="{{ asset('home') }}//images/logo-white.png" alt="logo" style="width:50%; "> </a> </div>
+                         <img src="{{ asset('home') }}/images/logo-white.png" alt="logo" style="width:50%; "> </a> </div>
                     <!-- /.logo -->
                     <!--  LOGO : END  -->
                 </div>

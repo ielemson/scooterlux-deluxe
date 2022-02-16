@@ -13,7 +13,7 @@ class FrontendUserProfileController extends Controller
     public function userdashboard()
     {
         $user = Auth::user();
-        return view('dashboard', compact('user'));
+        return view('shop.auth.dahsboard', compact('user'));
     }
     public function userlogout()
     {
@@ -28,7 +28,7 @@ class FrontendUserProfileController extends Controller
     public function userprofile()
     {
         $user = Auth::user();
-        return view('frontend.profile.index', compact('user'));
+        return view('shop.auth.profile', compact('user'));
     }
 
     public function userprofileupdate(Request $request)
@@ -67,7 +67,7 @@ class FrontendUserProfileController extends Controller
     public function userpasswordchange()
     {
         $user = Auth::user();
-        return view('frontend.profile.changepassword', compact('user'));
+        return view('shop.auth.changepassword', compact('user'));
     }
 
     public function userpasswordupdate(Request $request)

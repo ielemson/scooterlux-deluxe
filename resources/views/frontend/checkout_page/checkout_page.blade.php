@@ -143,7 +143,9 @@
                     </div>
                     <!-- checkout-step-01  -->
 
-                </div><!-- /.checkout-steps -->
+                </div>
+                <!-- /.checkout-steps -->
+
             </div>
             <div class="col-md-4">
                 <!-- checkout-progress-sidebar -->
@@ -207,27 +209,6 @@
 
                 <div class="checkout-progress-sidebar ">
                     <div class="panel-group">
-                        {{-- <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="unicase-checkout-title">Select Payment Method</h4>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <label for="">Paystack</label>
-                                    <input type="radio" name="payment_method" id="" value="paystack" >
-                                    <img src="{{ asset('frontend/assets/images/payments/paystack.png') }}" alt="">
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="">Shop</label>
-                                    <input type="radio" name="payment_method" id="" value="card">
-                                    <img src="{{ asset('frontend/assets/images/payments/paystack.png') }}" alt="">
-                                </div>
-                            
-                                @error('payment_method')
-                                    <span class="alert text-danger">{{ $message }}</span>
-                                @enderror
-                            </div>
-                        </div> --}}
                         <hr>
               <button type="submit" class="btn btn-primary checkout-page-button btn-block"><b>Confirm Order</b>
             </button>
@@ -239,6 +220,7 @@
         </div><!-- /.row -->
     </div>
  </div>
+
 @section('frontend_script')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript">
@@ -270,4 +252,5 @@
         });
     </script>
 @endsection
+
 @endsection

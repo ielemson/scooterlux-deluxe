@@ -1,9 +1,5 @@
 /**
-Template Name: Portum - Single Product Landing Intro Page Template
-Author: ThemeSurf
-Version: 1.0.0
-Release: 03.18.2018
-*/
+
 /**
  * Table of Contents
  * 1.0 - Fonts
@@ -1062,7 +1058,8 @@ form label.error {
     transition: all .5s ease; }
     .header-sec .main-navbar .logo {
       width: 100%;
-      height: 40px; }
+      height: 7vh; 
+    }
       .header-sec .main-navbar .logo.logo-light {
         display: block; }
       .header-sec .main-navbar .logo.logo-dark {
@@ -1819,8 +1816,8 @@ a.share {
     13.0 Footer / Copyrights
    ========================================================================== */
 .footer-sec {
-  background: #303540;
-  padding: 60px 0;
+  background: #343434;
+  padding: 10px 0;
   color: #fff;
   line-height: 1.6; }
   .footer-sec .footer-logo img {
@@ -1842,15 +1839,15 @@ a.share {
       color: #fff;
       font-size: 1.06em;
       vertical-align: middle; }
-      .footer-sec li a:hover {
+      /* .footer-sec li a:hover {
         background: #ff5247;
-        color: #fff; }
+        color: #fff; } */
   .footer-sec a {
     color: inherit; }
-    .footer-sec a.c-p {
+    /* .footer-sec a.c-p {
       color: #ff5247; }
     .footer-sec a:hover {
-      color: #ff5247; }
+      color: #ff5247; } */
 
 #preloader {
   position: fixed;

@@ -1,61 +1,59 @@
-{{-- <x-guest-layout>
-    <x-jet-authentication-card>
-        <x-slot name="logo">
-            <x-jet-authentication-card-logo />
-        </x-slot>
+@extends('shop.layout.master')
 
-        <div class="mb-4 text-sm text-gray-600">
-            {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+
+@section('content')
+       <!-- Preloader -->
+       <div id="preloader">
+        <div class="spinner-grow" role="status">
+            <span class="sr-only">Loading...</span>
         </div>
+    </div>
 
-        @if (session('status'))
-            <div class="mb-4 font-medium text-sm text-green-600">
-                {{ session('status') }}
-            </div>
-        @endif
+    <!-- Header Area -->
+    @include('shop.includes.header')
+    <!-- Header Area End -->
 
-        <x-jet-validation-errors class="mb-4" />
-
-        <form method="POST" action="{{ route('password.email') }}">
-            @csrf
-
-            <div class="block">
-                <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <x-jet-button>
-                    {{ __('Email Password Reset Link') }}
-                </x-jet-button>
-            </div>
-        </form>
-    </x-jet-authentication-card>
-</x-guest-layout> --}}
-
-@extends('frontend.frontend_master')
-
-@section('frontend_content')
-<div class="body-content">
-	<div class="container">
-		<div class="sign-in-page">
-			<div class="row">
-				<!-- Sign-in -->
-        <div class="col-md-12 col-sm-12 sign-in m-auto">
-            <h4 class="">Forget Password</h4>
-            <p class="">{{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}</p>
-            <form class="register-form outer-top-xs" role="form" action="{{ route('password.email') }}" method="POST">
-                @csrf
-                <div class="form-group">
-                    <label class="info-title" for="exampleInputEmail1">Email Address <span>*</span></label>
-                    <input type="email" name="email" class="form-control unicase-form-control text-input" id="exampleInputEmail1">
+       <!-- Breadcumb Area -->
+       <div class="breadcumb_area">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <h5>Reset Password</h5>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
+                        <li class="breadcrumb-item"><a href="{{route('login')}}">Password</a></li>
+                        {{-- <li class="breadcrumb-item active"></li> --}}
+                    </ol>
                 </div>
-                <button type="submit" class="btn-upper btn btn-primary checkout-page-button">{{ __('Email Password Reset Link') }}</button>
-            </form>
+            </div>
         </div>
-        <!-- Sign-in -->
-    </div><!-- /.row -->
-</div><!-- /.sigin-in-->
-</div><!-- /.container -->
-</div>
+    </div>
+ 
+   
+	   <!-- Login Area -->
+	   <div class="bigshop_reg_log_area section_padding_100_50">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 mx-auto">
+                    <div class="login_form mb-50">
+                        {{-- <h5 class="mb-3">Login</h5> --}}
+
+                        <form class="register-form outer-top-xs" role="form" action="{{ route('password.email') }}" method="POST">
+                            @csrf
+                            <div class="form-group">
+                                <label class="info-title" for="exampleInputEmail1">Email Address <span>*</span></label>
+                                <input type="email" name="email" class="form-control unicase-form-control text-input" required>
+                            </div>
+                            <button type="submit" class="btn-upper btn btn-primary btn-sm btn-block">{{ __('Email Password Reset Link') }}</button>
+                        </form>
+                       
+                    </div>
+                </div>
+
+              
+            </div>
+        </div>
+    </div>
+    <!-- Login Area End -->
+
 @endsection

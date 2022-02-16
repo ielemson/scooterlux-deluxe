@@ -22,7 +22,7 @@ class OrderDetailsController extends Controller
             ->orderBy('id', 'DESC')->get();
         $user = Auth::user();
             //return $orderItems;
-        return view('frontend.order.order-details', compact(
+        return view('shop.auth.orderDetails', compact(
             'order',
             'orderItems',
             'user'
@@ -66,7 +66,7 @@ class OrderDetailsController extends Controller
         ->where('status','=', 'return')
         ->orderBy('id','DESC')->get();
         $user = Auth::user();
-        return view('frontend.order.order-history',compact('orders','user'));
+        return view('shop.auth.orderhistory',compact('orders','user'));
     }
     public function cancelOrderList()
     {
@@ -75,6 +75,6 @@ class OrderDetailsController extends Controller
         ->where('status','cancel')
         ->orderBy('id','DESC')->get();
         $user = Auth::user();
-        return view('frontend.order.order-history',compact('orders','user'));
+        return view('shop.auth.orderhistory',compact('orders','user'));
     }
 }

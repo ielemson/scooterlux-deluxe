@@ -12,12 +12,8 @@
                 {{-- @include('frontend.frontend_layout.body.sidebar') --}}
             <!--  SIDEBAR : END  -->
             <!--  CONTENT  -->
-            <div class="col-xs-12 col-sm-12 col-md-12 homebanner-holder" style="min-height: 37vh;"
-              
-                
+            <div class="col-xs-12 col-sm-12 col-md-12 homebanner-holder" style="min-height: 37vh;">
                 @include('frontend.frontend_layout.home_page.new-arrivals')
-               
-
             </div>
             <!-- /.homebanner-holder -->
             <!--  CONTENT : END  -->

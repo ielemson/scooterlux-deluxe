@@ -10,15 +10,15 @@
 
         <!-- ================= Favicon ================== -->
         <!-- Standard -->
-        <link rel="shortcut icon" href="img/favicon.png">
+        <link rel="shortcut icon" href="{{asset('landing/img/favicon.png')}}">
         <!-- Retina iPad Touch Icon-->
-        <link rel="apple-touch-icon" sizes="144x144" href="{{asset('landing/img/favicon-retina-ipad.png')}}">
+        <link rel="apple-touch-icon" sizes="144x144" href="{{asset('landing/img/favicon.png')}}">
         <!-- Retina iPhone Touch Icon-->
-        <link rel="apple-touch-icon" sizes="114x114" href="{{asset('landing/img/favicon-retina-iphone.png')}}">
+        <link rel="apple-touch-icon" sizes="114x114" href="{{asset('landing/img/favicon.png')}}">
         <!-- Standard iPad Touch Icon--> 
-        <link rel="apple-touch-icon" sizes="72x72" href="{{asset('landing/img/favicon-standard-ipad.png')}}">
+        <link rel="apple-touch-icon" sizes="72x72" href="{{asset('landing/img/favicon.png')}}">
         <!-- Standard iPhone Touch Icon--> 
-        <link rel="apple-touch-icon" sizes="57x57" href="{{asset('landing/img/favicon-standard-iphone.png')}}">
+        <link rel="apple-touch-icon" sizes="57x57" href="{{asset('landing/img/favicon.png')}}">
 
         <!-- ============== Resources style ============== -->
         <link rel="stylesheet" href="{{asset('landing/css/style.css')}}" />
@@ -54,7 +54,7 @@
 		<section id="left-side">
 
 			<!-- Your logo -->
-			<img src="{{asset('landing/img/logo.png')}}" alt="" class="brand-logo" />
+			<img src="{{asset('landing/img/logo-white.png')}}" alt="" class="brand-logo" />
 
 			<div class="content">
 

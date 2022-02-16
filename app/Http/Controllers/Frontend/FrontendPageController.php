@@ -33,7 +33,7 @@ class FrontendPageController extends Controller
     {
         $categories = Category::with(['subcategory', 'subsubcategory', 'products'])->orderBy('category_name_en', 'ASC')->get();
         $sliders = Slider::where('slider_name', '=', 'Main-Slider')->where('slider_status', '=', 1)->limit(3)->get();
-        $new_products = Product::with(['images'])
+        $products = Product::with(['images'])
         ->where('status', 1)->limit(20)->get();
 
         $skip_category_0 = Category::skip(0)->first();
@@ -47,14 +47,8 @@ class FrontendPageController extends Controller
                         ->latest()->limit(20)->get();
 
         //return response()->json($categories);
-        return view('frontend.index', compact(
-            'categories',
-            'sliders',
-            'new_products',
-            'skip_category_0',
-            'skip_category_products_0',
-            'skip_brand_0',
-            'skip_brand_products_0',
+        return view('shop.welcome', compact(
+            'products',
         ));
     }
 
@@ -74,7 +68,7 @@ class FrontendPageController extends Controller
         $related_products = Product::where('category_id',$product->category_id)
         ->where('id', '!=', $id)->orderBy('id','DESC')->get();
         //return response()->json($product);
-        return view('frontend.frontend_layout.product_page.product-page', compact(
+        return view('shop.product', compact(
             'categories',
             'product',
             'colors_en',

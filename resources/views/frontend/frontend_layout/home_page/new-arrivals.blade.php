@@ -4,6 +4,7 @@
         New Arrivals
     </h3>
    
+    
     <div class="shell">
         <div class="container">
           <div class="row">
@@ -43,7 +44,7 @@
                                 <button type="submit" class="buy-btn" onclick="addToCart()">
                                     <i class="zmdi zmdi-shopping-basket"></i></button>
                             </div>
-                    </a>
+                        </a>
                     </div>
                   </div>
                 </div>

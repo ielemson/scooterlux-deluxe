@@ -13,6 +13,6 @@ class OrderHistoryController extends Controller
     {
         $orders = Order::where('user_id', Auth::id())->orderBy('id', 'DESC')->get();
         $user = Auth::user();
-        return view('frontend.order.order-history', compact('orders','user'));
+        return view('shop.auth.orderhistory', compact('orders','user'));
     }
 }
